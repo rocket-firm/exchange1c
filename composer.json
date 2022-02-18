@@ -1,5 +1,5 @@
 {
-  "name": "bigperson/exchange1c",
+  "name": "rocket-firm/exchange1c",
   "type": "library",
   "description": "Catalog Loader from 1c - CommerceML protocol",
   "keywords": [
@@ -29,7 +29,7 @@
   },
   "require": {
     "php": ">=7.1",
-    "carono/commerceml": "^0.2.3"
+    "rocket-firm/commerceml": "master"
 
   },
   "require-dev": {
@@ -37,5 +37,11 @@
     "illuminate/session": "^5.7",
     "symfony/http-foundation": "^4.1",
     "symfony/event-dispatcher": "^4.1"
-  }
+  },
+  "repositories": [
+      {
+          "url": "https://github.com/rocket-firm/commerceml",
+          "type": "git"
+      }
+  ]
 }
