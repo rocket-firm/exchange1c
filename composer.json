@@ -39,7 +39,7 @@
   },
   "repositories": [
       {
-          "url": "https://github.com/rocket-firm/commerceml",
+          "url": "https://github.com/rocket-firm/php-commerceml",
           "type": "git"
       }
   ]
