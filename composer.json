@@ -29,7 +29,7 @@
   },
   "require": {
     "php": ">=7.1",
-    "rocket-firm/commerceml": "master"
+    "rocket-firm/commerceml": "dev-master"
 
   },
   "require-dev": {
