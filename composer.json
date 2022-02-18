@@ -1,6 +1,5 @@
 {
   "name": "rocket-firm/exchange1c",
-  "type": "library",
   "description": "Catalog Loader from 1c - CommerceML protocol",
   "keywords": [
     "1c",
