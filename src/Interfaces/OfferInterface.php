@@ -30,6 +30,20 @@ interface OfferInterface extends ExportFieldsInterface, IdentifierInterface
     public function setPrice1c($price);
 
     /**
+     * offers.xml > ПакетПредложений > Предложения > Предложение > Склад
+     * Количество на складе
+     *
+     * $stockroom['КоличествоНаСкладе']
+     * $stockroom['ИдСклада']
+     */
+    public function setCountStockroom1c($stockrooms);
+
+    /**
+     * Массив складов с названиями
+     */
+    public function setStockrooms1c(array $stockrooms);
+
+    /**
      * @param $types
      *
      * @return void

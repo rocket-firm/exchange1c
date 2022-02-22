@@ -48,6 +48,10 @@ class OfferService
      * @var ModelBuilderInterface
      */
     private $modelBuilder;
+    /**
+     * @var array Массив складов с названиями
+     */
+    private $stockrooms;
 
     /**
      * CategoryService constructor.
@@ -78,6 +82,10 @@ class OfferService
             $offerClass::createPriceTypes1c($commerce->offerPackage->getPriceTypes());
         }
         $this->beforeOfferSync();
+
+        $this->stockrooms = $commerce->offerPackage->getStockrooms();
+
+
         foreach ($commerce->offerPackage->getOffers() as $offer) {
             $productId = $offer->getClearId();
             if ($product = $this->findProductModelById($productId)) {
@@ -124,6 +132,8 @@ class OfferService
         $this->beforeUpdateOffer($model, $offer);
         $this->parseSpecifications($model, $offer);
         $this->parsePrice($model, $offer);
+        $this->parseSetStockrooms($model, $offer);
+        $this->parseCountStockrooms($model, $offer);
         $this->afterUpdateOffer($model, $offer);
     }
 
@@ -147,6 +157,16 @@ class OfferService
         foreach ($offer->getPrices() as $price) {
             $model->setPrice1c($price);
         }
+    }
+
+    protected function parseCountStockrooms(OfferInterface $model, Offer $offer)
+    {
+        $model->setCountStockroom1c($offer->getStockrooms());
+    }
+
+    protected function parseSetStockrooms(OfferInterface $model, Offer $offer)
+    {
+        $model->setStockrooms1c($this->stockrooms);
     }
 
     public function beforeOfferSync(): void
